@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>558</x>
-      <y>450</y>
+      <x>450</x>
+      <y>693</y>
       <w>189</w>
       <h>90</h>
     </coordinates>
@@ -20,8 +20,8 @@ is_deleted_file()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>423</x>
-      <y>324</y>
+      <x>36</x>
+      <y>153</y>
       <w>189</w>
       <h>63</h>
     </coordinates>
@@ -35,7 +35,7 @@ Run()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>729</x>
+      <x>702</x>
       <y>315</y>
       <w>189</w>
       <h>72</h>
@@ -51,16 +51,25 @@ ensure_directory(path)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>648</x>
-      <y>153</y>
+      <x>378</x>
+      <y>90</y>
       <w>189</w>
-      <h>72</h>
+      <h>180</h>
     </coordinates>
-    <panel_attributes>_Configure_
+    <panel_attributes>_SystemConfig_
 --
 source_path
 backup_path
-sync interval 
+sync_interval
+util_path
+log_file
+config_file
+--
+initialise()
+save_to_file()
+load_from_file()
+update_config()
+
 
 </panel_attributes>
     <additional_attributes/>
@@ -68,8 +77,8 @@ sync interval
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>297</x>
-      <y>549</y>
+      <x>90</x>
+      <y>495</y>
       <w>189</w>
       <h>72</h>
     </coordinates>
@@ -81,60 +90,5 @@ time()
 
 </panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>603</x>
-      <y>360</y>
-      <w>144</w>
-      <h>27</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>369</x>
-      <y>486</y>
-      <w>207</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0;210.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>567</x>
-      <y>189</y>
-      <w>99</w>
-      <h>153</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;10.0;90.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>828</x>
-      <y>189</y>
-      <w>72</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;60.0;10.0;60.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>738</x>
-      <y>378</y>
-      <w>108</w>
-      <h>135</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>100.0;10.0;100.0;130.0;10.0;130.0</additional_attributes>
   </element>
 </diagram>
