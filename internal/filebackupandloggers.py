@@ -36,6 +36,12 @@ Copies files across
 
 #########################
 
+        'delete'
+
+Deletes a file
+
+#########################
+
         'exit'
 
 Exits from the terminal
@@ -71,6 +77,15 @@ if c == 'copy':
             print(f"File '{src_file}' copied and replaced successfully.")
             logging.info("File replacement logged.")
         compare.report()
+        
+if c == 'delete':
+    removie = input("Enter the name of the file you'd like to remove, include directory: ")
+    if os.path.exists(removie):
+        os.remove(removie)
+        print(f"File {removie} has been successfully deleted.")
+        logging.info("File deletion logged.")
+    else:
+        print(f"The file does not exist.")
 
 if c == 'exit':
     sys.exit()
