@@ -26,9 +26,9 @@ import time
 class OSfileAdapter(FileService):
   def sync_file(self, source, destination):
     if not os.path.exists(source)
-    return "Error: Source is not found:
+    return "Error: Source is not found"
 
-   if os.path.exists(destination):
+    if os.path.exists(destination):
      if os.path.getmtime(source) <= os.path.getmtime(destination)
      return "No changes made"
 
@@ -40,33 +40,22 @@ class Command(ABC):
   @abstractmethod 
 def execute(self):
   pass 
-
-class BackUpCommand(Command):
-  def __init__(self, source, destination, adapter):
-    self.source = source 
-    self.destination = destination import hashlib 
-import logging 
-import time
-    self.adapter = adapter
+class FileBackupCommand(Command):
+  def __init__(self,service: FileService, src: str, dest: str):
+    self.service = service
+    self.src = src
+    self.dest = dest
     self.logger = BackupLogger()
+def execute(self):
+  result = self.service.sync_file(self.src,self.dest)
+  self.logger.log(f"Backup from {self.src} to {self.dest} : {result}")
 
-def executer(self):
-  result = self.adapter.sync_file(self.source, self.destination)
-  filename = os.path.basename(self.source)
-if result == "Copied file":
-  self.logger.log(f"Success : {filename} backed up to {self.destination}
-elif result == "No changes made":
-   self.logger.log(f"Skipped : {filename} has made no changes")
-else:
-  self.logger.log(f"Failed : {result}")
+if __name__ == "__main__":
+  adapter = OSFileAdapter()
+  cmd = FileBackupCommand(adapter, "source.txt", "backup_source.txt")
+  cmd.execute()
 
-class BackUpUtility:
-  def __init__(self):
-  self.queue = []
-  def add_task(self,command):
-  self.queue.append(command)
-def run_monitoring_simulation(self):
-self.logger = BackUpLogger()
+
   
   
 
