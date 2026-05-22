@@ -20,18 +20,29 @@ compare.report()
 
 backupMenu = f"""
 
-=== BACKUP MENU ===
+====== BACKUP MENU ======
 
 Enter a command:
 
-'status'
+        'status'
 
-'copy'
+Provides file report
 
-'exit'
+#########################
 
+        'copy'
 
-===================
+Copies files across
+
+#########################
+
+        'exit'
+
+Exits from the terminal
+
+#########################
+
+=========================
 
 """
 
