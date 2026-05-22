@@ -1,6 +1,5 @@
 import os
 
-
 class SystemConfig():
     """
     Singleton configuration manager for the File Backup and Sync Utility.
@@ -13,6 +12,7 @@ class SystemConfig():
 
         if not util_root_path:
             raise ValueError("util_root_path is required")
+        cls._instance_initialized = False
 
         if cls._instance is None:
             cls._instance = super(SystemConfig, cls).__new__(cls)
@@ -28,5 +28,24 @@ class SystemConfig():
             cls._instance.backup_path = backup_path
             cls._instance.sync_interval = sync_interval
 
+        cls._instance_initialized = True
+
         return cls._instance
+
+    def save_to_file(self)
+    config_data = {"utility_root_path": util_root_path,
+                   "config_file_name": config_file_name,
+                   "log_file_name": log_file_name,
+                   "config_file_path": config_file_path,
+                   "log_file_path": log_file_path,
+                   "source_path": source_path
+                   "back_up": back_up
+                   "sync_interval": sync_interval}
+
+    with open(config_file, "w") as file:
+
+
+
+
+
 
