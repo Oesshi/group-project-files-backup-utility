@@ -1,6 +1,8 @@
 from src.system_config import SystemConfig
 
 
+
+
 def main():
     """
     Entry point for the File Backup and Sync Utility.
@@ -11,18 +13,17 @@ def main():
 
     # 1. Create / load configuration
     config = SystemConfig(
-        util_root_path= "util_system",
-        source_path= "C:/data/source",
-        backup_path= "C:/data/backup",
-        sync_interval=5
+        util_root_path= "log",
+        source_path='RoveemaAena',
+        backup_path='backup',
+        log_file_name='logoon.txt',
+        sync_interval=30
     )
 
-    print(config.source_path)
+    print(config)
 
-    config1 = SystemConfig(
-        util_root_path= "util_system",
-    )
-    print(config1.source_path)
+
 
 if __name__ == "__main__":
+
     main()
