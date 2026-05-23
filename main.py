@@ -1,4 +1,5 @@
 from src.system_config import SystemConfig
+from src.logger import Logger
 
 
 
@@ -14,13 +15,15 @@ def main():
     # 1. Create / load configuration
     config = SystemConfig(
         util_root_path= "log",
-        source_path='RoveemaAena',
+        source_path='source',
         backup_path='backup',
-        log_file_name='logoon.txt',
+        log_file_name='log.txt',
         sync_interval=30
     )
 
-    print(config)
+
+    logger = Logger(config)
+    logger.log_message('INFO','ComParing files','file comparer')
 
 
 
