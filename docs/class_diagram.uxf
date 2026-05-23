@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>440</y>
+      <w>168</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>_FlileComparer_
+--
+is_new_file()
+is_modified_file()
+Compare_file()
+is_deleted_file()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>344</y>
+      <w>168</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>_BackupUtility_
+--
+sync()
+Run()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>544</y>
+      <w>168</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>_FileManager_
+--
+copy_file(src, bkp)
+list_files(path)
+ensure_directory(path) 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>424</x>
+      <y>144</y>
+      <w>168</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>_SystemConfig_
+--
+source_path
+backup_path
+sync_interval
+util_root_path
+log_file
+config_file
+--
+save_to_file()
+load_from_file()
+__str__()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>304</y>
+      <w>168</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>__Logger__
+--
+info(FileComparer) 
+error(message)
+time()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
