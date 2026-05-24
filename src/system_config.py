@@ -1,12 +1,12 @@
 import os
 import json
+from datetime import datetime
 
 class SystemConfig():
     """
     Singleton configuration manager for the File Backup and Sync Utility.
     Handles config persistence, loading, and global system settings.
     """
-
     _instance = None
 
     def __new__(cls,util_root_path,
@@ -22,7 +22,9 @@ class SystemConfig():
         if cls._instance is None:
             cls._instance = super(SystemConfig, cls).__new__(cls)
             cls._instance.util_root_path = util_root_path
-            cls._instance.config_file_path = os.path.join(cls._instance.util_root_path, config_file_name)
+            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+            cls._instance.config_file_path = os.path.join(cls._instance.util_root_path,timestamp, config_file_name)
+            os.makedirs(os.path.dirname(cls._instance.config_file_path), exist_ok=True)
 
             try:
                 cls._instance.load_from_file()
@@ -40,12 +42,14 @@ class SystemConfig():
                 if cls._instance.log_file_name != log_file_name:
                     cls._instance.log_file_name = log_file_name
 
-                cls._instance.log_file_path = os.path.join(cls._instance.util_root_path , log_file_name)
+
             except:
                 cls._instance.source_path = source_path
                 cls._instance.backup_path = backup_path
                 cls._instance.log_file_name = log_file_name
                 cls._instance.sync_interval = sync_interval
+
+            cls._instance.log_file_path = os.path.join(cls._instance.util_root_path ,timestamp, log_file_name)
 
 
             if not cls._instance.source_path:
@@ -92,5 +96,3 @@ class SystemConfig():
               sync_interval={self.sync_interval}
             )"""
         )
-
-cd..
