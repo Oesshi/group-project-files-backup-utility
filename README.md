@@ -18,14 +18,15 @@ Files-backup-utility/
 ├── main.py
 |
 ├── src/
-│ ├── backup_utility.py
-│ ├── file_manager.py
-│ ├── file_comparator.py
+│ ├── sync_engine.py
+│ ├── file_handler.py
+│ ├── sync_analyser.py
 │ ├── logger.py
-│ └── config.py
+│ └── system_config.py
 │
 ├── docs/
-│ ├── class_diagram.png
+│ ├── class_diagram.jpg
+│ ├── class_diagram.ufx
 │ └── Lesson34_sdd-file.pdf
 
 ```
